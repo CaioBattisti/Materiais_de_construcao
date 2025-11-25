@@ -59,7 +59,7 @@ if (isset($_POST['email'])) {
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Login - Serjão Materiais</title>
+<title>Login - Caio Materiais</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
