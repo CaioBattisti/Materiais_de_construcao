@@ -64,7 +64,7 @@ if (isset($_POST['email'])) {
 </head>
 <body>
 <div class="container">
-  <h2>Login - Serjão Materiais</h2>
+  <h2>Login - Caio Materiais</h2>
   <form method="post">
     <input type="email" name="email" placeholder="E-mail" required><br>
     <input type="password" name="senha" placeholder="Senha" required><br>
