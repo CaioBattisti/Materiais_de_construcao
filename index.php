@@ -17,19 +17,37 @@ $usuario = $_SESSION['usuario'];
 <link rel="stylesheet" href="style.css">
 
 <style>
+
+    /* Centralização na tela */
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;  /* horizontal */
+        align-items: center;      /* vertical */
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        text-align: center;
+    }
+
     .btn-link {
-        display: inline-block;
-        margin: 6px 0;
+        display: block;
+        margin: 10px 0;
         text-decoration: none;
     }
 
     .btn-link button {
-        padding: 10px 18px;
+        width: 250px;
+        padding: 12px;
         font-size: 16px;
         border: none;
-        border-radius: 6px;
+        border-radius: 8px;
         cursor: pointer;
-        background-color: green;
+        background-color: #3498db; /* azul correto */
         color: #fff;
         transition: 0.2s;
     }
@@ -45,27 +63,26 @@ $usuario = $_SESSION['usuario'];
     .btn-sair button:hover {
         background-color: #c0392b;
     }
-
 </style>
 
 </head>
 <body>
+
 <div class="container">
-  <h2>Bem-vindo, <?php echo $usuario; ?>!</h2>
+    <h2>Bem-vindo, <?php echo $usuario; ?>!</h2>
 
-  <a href="cadastro_produto.php" class="btn-link">
-      <button>📦 Cadastro de Produtos </button>
-  </a>
+    <a href="cadastro_produto.php" class="btn-link">
+        <button>📦 Cadastro de Produtos</button>
+    </a>
 
-  <a href="estoque.php" class="btn-link">
-      <button>📊 Gestão de Estoque </button>
-  </a>
+    <a href="estoque.php" class="btn-link">
+        <button>📊 Gestão de Estoque</button>
+    </a>
 
-<br >
-  <a href="logout.php" class="btn-link btn-sair">
-      <button> Sair </button>
-  </a>
-
+    <a href="logout.php" class="btn-link btn-sair">
+        <button>🚪 Sair</button>
+    </a>
 </div>
+
 </body>
 </html>
