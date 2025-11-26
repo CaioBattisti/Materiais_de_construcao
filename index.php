@@ -47,7 +47,7 @@ $usuario = $_SESSION['usuario'];
         border: none;
         border-radius: 8px;
         cursor: pointer;
-        background-color: #3498db; /* azul correto */
+        background-color: green;
         color: #fff;
         transition: 0.2s;
     }
