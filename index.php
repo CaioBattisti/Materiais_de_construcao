@@ -1,20 +1,11 @@
 <?php
-// --- Bloco de Verificação de Sessão (Controle de Acesso) ---
-
-// Inicia ou resume uma sessão PHP existente.
-// Isso é crucial para acessar as variáveis de sessão ($_SESSION).
 session_start();
 
-// Verifica se a variável de sessão 'usuario' NÃO está definida (ou seja, o usuário não está logado).
 if (!isset($_SESSION['usuario'])) {
-    // Se a sessão 'usuario' não existe, redireciona o usuário (força-o) para a página de login.
     header("Location: login.php");
-    // Interrompe a execução do script para garantir que nada mais seja processado ou exibido.
     exit;
 }
 
-// Se o usuário está logado (o código continuou a execução), armazena o nome de usuário
-// da sessão em uma variável local para uso mais fácil no HTML.
 $usuario = $_SESSION['usuario'];
 ?>
 
@@ -24,13 +15,57 @@ $usuario = $_SESSION['usuario'];
 <meta charset="UTF-8">
 <title>Painel - Caio Materiais</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+    .btn-link {
+        display: inline-block;
+        margin: 6px 0;
+        text-decoration: none;
+    }
+
+    .btn-link button {
+        padding: 10px 18px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background-color: green;
+        color: #fff;
+        transition: 0.2s;
+    }
+
+    .btn-link button:hover {
+        background-color: #2980b9;
+    }
+
+    .btn-sair button {
+        background-color: #e74c3c;
+    }
+
+    .btn-sair button:hover {
+        background-color: #c0392b;
+    }
+
+</style>
+
 </head>
 <body>
 <div class="container">
   <h2>Bem-vindo, <?php echo $usuario; ?>!</h2>
-  <a href="cadastro_produto.php">📦 Cadastro de Produtos</a><br>
-  <a href="estoque.php">📊 Gestão de Estoque</a><br>
-  <a href="logout.php" class="sair">Sair</a>
+
+  <a href="cadastro_produto.php" class="btn-link">
+      <button>📦 Cadastro de Produtos </button>
+  </a>
+
+  <a href="estoque.php" class="btn-link">
+      <button>📊 Gestão de Estoque </button>
+  </a>
+
+<br >
+  <a href="logout.php" class="btn-link btn-sair">
+      <button> Sair </button>
+  </a>
+
 </div>
 </body>
 </html>
